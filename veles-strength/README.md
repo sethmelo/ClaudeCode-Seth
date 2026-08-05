@@ -29,19 +29,21 @@ Sequenced to move someone from "never heard of them" to "these are the people
 who kit out my floor", with a trade account or a site visit as the conversion
 rather than a cart:
 
-1. **Hero** — the promise (`Tools for greatness`) plus the wholesale claim and
-   three credibility numbers: gyms outfitted, commercial floors, dispatch time.
+1. **Hero** — a full-width photo card with the promise (`Tools for greatness`)
+   overlaid and a floating warehouse-hours widget (address, Mon–Fri and Saturday
+   rows with duration chips), plus four credibility stats beneath.
 2. **Track marquee** — container direct, trade pricing, 30-day terms, stock depth.
 3. **Why wholesale with Veles** — four pillars on margin, stock depth, testing
    and trying it before you buy.
-4. **The Range** — five categories carrying both retail and trade entry prices.
+4. **The Catalogue** — six photographed categories carrying retail and trade prices.
 5. **Fitouts** — *the floors we've built*. A wholesaler's real portfolio, since
    the finished facility is what's actually being sold.
-6. **Packages** — commercial first (The Floor / The Studio / The Garage), each
-   fully specced and priced.
+6. **Packages** — three side-by-side pricing tiers (Garage / Studio / Floor)
+   with checked feature lists, the Studio featured.
 7. **The Steel** — the spec numbers, where a considered purchase is won.
 8. **Trade & wholesale** — accounts, volume tiers, dealer/drop-ship, OEM, freight.
-9. **Reviews**, then the **warehouse and trade counter**, then a quote form.
+9. **Reviews**, an **FAQ** covering freight, warranty, returns, install, trade
+   eligibility and stock truth, then the **warehouse** and a quote form.
 
 ## Art direction
 
@@ -55,15 +57,11 @@ carry the whole page:
   re-skins the entire site.
 - **The lane track.** Turf laid in CSS perspective with painted lane lines and
   numerals — used in the hero, the marquee, the fitout scenes and the closing CTA.
-- **Annotated technical line-art.** No stock photography. Every product visual is
-  hand-drawn inline SVG with dimension callouts and leader lines, which suits a
-  brand whose argument is steel gauge and load ratings, and keeps the page fully
-  self-contained.
-
-The fitout scenes are pure CSS/SVG: an illuminated panelled back wall, LED strip
-lighting, a black rig silhouette with a lit top edge, and the turf plane in
-perspective. Each room carries its own lighting temperature so the three don't
-read identical.
+- **Cinematic AI photography.** Eleven Soul Cinema shots (hero, six catalogue
+  categories, three fitouts, warehouse) generated to one art direction: matte
+  black steel, cool white LEDs, teal glow, no people. They are hot-linked from
+  the generation CDN, not vendored into the repo — swap the URLs in index.html
+  for local files to make the site fully self-contained.
 
 Type is Archivo variable run condensed and heavy (`font-stretch: 70–86%`) for
 display, with JetBrains Mono for eyebrows, specs and labels — the mono carries

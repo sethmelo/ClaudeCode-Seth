@@ -30,10 +30,11 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#range">Range</a>
+      <a href="#range">Catalogue</a>
       <a href="#fitouts">Fitouts</a>
       <a href="#build">Packages</a>
       <a href="#trade">Trade</a>
+      <a href="#faq">FAQ</a>
       <a href="#showroom">Warehouse</a>
     </nav>
 
@@ -52,11 +53,11 @@
 
 <div class="mobile-menu" id="mobileMenu" hidden>
   <nav aria-label="Mobile">
-    <a href="#range"><span>01</span> Range</a>
+    <a href="#range"><span>01</span> Catalogue</a>
     <a href="#fitouts"><span>02</span> Fitouts</a>
     <a href="#build"><span>03</span> Packages</a>
-    <a href="#craft"><span>04</span> The Steel</a>
-    <a href="#trade"><span>05</span> Trade</a>
+    <a href="#trade"><span>04</span> Trade</a>
+    <a href="#faq"><span>05</span> FAQ</a>
     <a href="#showroom"><span>06</span> Warehouse</a>
   </nav>
   <div class="mobile-menu__foot">
@@ -70,111 +71,72 @@
 <!-- ══════════════════════ HERO ══════════════════════ -->
 <section class="hero" id="top">
   <div class="hero__bg" aria-hidden="true">
-    <div class="leds">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-    </div>
     <div class="blueprint"></div>
-    <div class="hero__floor"></div>
     <div class="glow glow--a"></div>
   </div>
 
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <p class="eyebrow reveal" data-d="0">
-        <span class="eyebrow__dot"></span>Maribyrnong warehouse &nbsp;/&nbsp; Trade &amp; retail &nbsp;/&nbsp; Shipped Australia-wide
-      </p>
+  <div class="wrap">
+    <p class="eyebrow reveal" data-d="0">
+      <span class="eyebrow__dot"></span>Maribyrnong warehouse &nbsp;/&nbsp; Trade &amp; retail &nbsp;/&nbsp; Shipped Australia-wide
+    </p>
 
-      <h1 class="hero__title">
-        <span class="line reveal" data-d="1">Tools for</span>
-        <span class="line reveal" data-d="2"><em>greatness</em></span>
-      </h1>
+    <!-- Big photo card with floating hours widget, per reference -->
+    <div class="hero-card reveal" data-d="1">
+      <img class="hero-card__img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_153038_e88f9103-b6e6-4ae3-b948-05b667dc8771_min.webp"
+           alt="Row of matte black Veles power racks in a dark LED-lit gym" width="2048" height="1152" fetchpriority="high">
+      <div class="hero-card__scrim" aria-hidden="true"></div>
 
-      <p class="hero__sub reveal" data-d="3">
-        Australia's gym equipment wholesaler. Container-direct racks, bars and plates —
-        held in Melbourne, priced for the trade, on your floor in days rather than months.
-      </p>
-
-      <div class="hero__cta reveal" data-d="4">
-        <a class="btn btn--accent" href="#fitouts">
-          See the floors we've built
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
-        <a class="btn btn--ghost" href="#trade">Open a trade account</a>
+      <div class="hero-card__copy">
+        <h1 class="hero__title">
+          <span class="line">Tools for</span>
+          <span class="line"><em>greatness</em></span>
+        </h1>
+        <p class="hero__sub">
+          Australia's gym equipment wholesaler. Container-direct racks, bars and plates —
+          held in Melbourne, priced for the trade, on your floor in days rather than months.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--accent" href="#range">
+            Shop the catalogue
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <a class="btn btn--glass" href="#trade">Open a trade account</a>
+        </div>
       </div>
 
-      <dl class="hero__stats reveal" data-d="5">
-        <div><dt data-count="700" data-suffix="+">0</dt><dd>Gyms outfitted</dd></div>
-        <div><dt data-count="42" data-suffix="">0</dt><dd>Commercial floors</dd></div>
-        <div><dt data-count="48" data-suffix="hr">0</dt><dd>Dispatch, in stock</dd></div>
-      </dl>
+      <!-- Floating warehouse-hours widget -->
+      <aside class="hours" aria-label="Warehouse hours">
+        <p class="hours__addr">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 1114 0c0 4.9-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          3 / 12 Hampstead Rd, Maribyrnong VIC 3032
+        </p>
+        <div class="hours__row">
+          <b>Mon – Fri</b>
+          <div class="hours__times">
+            <span class="hours__cell"><i>Open</i>9:00 AM</span>
+            <span class="hours__chip">8h</span>
+            <span class="hours__cell"><i>Close</i>5:00 PM</span>
+          </div>
+        </div>
+        <div class="hours__row">
+          <b>Saturday</b>
+          <div class="hours__times">
+            <span class="hours__cell"><i>Open</i>9:00 AM</span>
+            <span class="hours__chip">5h</span>
+            <span class="hours__cell"><i>Close</i>2:00 PM</span>
+          </div>
+        </div>
+        <p class="hours__note">Trade counter &amp; click-and-collect at the roller door</p>
+      </aside>
     </div>
 
-    <!-- Blueprint hero illustration: R6 power rack, annotated -->
-    <div class="hero__art reveal" data-d="3" aria-hidden="true">
-      <div class="hero__art-tag"><span>FIG. 01</span> VELES R6 — POWER RACK</div>
-      <svg class="rack-svg" viewBox="-82 -10 584 548" fill="none">
-        <g class="bp-dim">
-          <path d="M40 500 H380"/><path d="M40 494v12"/><path d="M380 494v12"/>
-          <path d="M400 60 V440"/><path d="M394 60h12"/><path d="M394 440h12"/>
-        </g>
-        <text class="bp-label" x="210" y="516" text-anchor="middle">1220 mm</text>
-        <text class="bp-label" x="412" y="254" text-anchor="middle" transform="rotate(90 412 254)">2300 mm</text>
-
-        <g class="bp-faint">
-          <rect x="98" y="70" width="20" height="370"/>
-          <rect x="302" y="70" width="20" height="370"/>
-          <path d="M118 78 H302"/>
-        </g>
-
-        <g class="bp-line">
-          <rect x="55" y="428" width="310" height="16"/>
-          <path d="M75 444v14H105v-14"/><path d="M315 444v14h30v-14"/>
-        </g>
-
-        <g class="bp-line">
-          <rect x="62" y="60" width="26" height="372"/>
-          <rect x="332" y="60" width="26" height="372"/>
-        </g>
-        <g class="bp-hole">
-          <g id="holesL"></g>
-          <g id="holesR"></g>
-        </g>
-
-        <g class="bp-line">
-          <rect x="62" y="60" width="296" height="18"/>
-          <path d="M88 96 H332"/>
-        </g>
-
-        <g class="bp-accent">
-          <rect x="70" y="104" width="280" height="12" rx="6"/>
-          <path d="M120 104v12M160 104v12M200 104v12M240 104v12M280 104v12"/>
-        </g>
-
-        <g class="bp-accent">
-          <path d="M88 250h22v10H88z"/><path d="M332 250h-22v10h22z"/>
-          <rect x="30" y="248" width="360" height="8" rx="4"/>
-          <rect x="14" y="238" width="18" height="28" rx="3"/>
-          <rect x="388" y="238" width="18" height="28" rx="3"/>
-        </g>
-
-        <g class="bp-line"><path d="M88 340h70M332 340h-70"/></g>
-
-        <g class="bp-callout">
-          <path d="M358 68 L392 40"/><circle cx="358" cy="68" r="3"/>
-          <path d="M62 302 L26 330"/><circle cx="62" cy="302" r="3"/>
-          <path d="M358 434 L396 462"/><circle cx="358" cy="434" r="3"/>
-        </g>
-        <text class="bp-note" x="396" y="34">75×75mm / 11ga</text>
-        <text class="bp-note" x="22" y="346" text-anchor="end">50mm Westside</text>
-        <text class="bp-note" x="400" y="470">1,000kg tested</text>
-      </svg>
-    </div>
+    <dl class="hero__stats reveal" data-d="2">
+      <div><dt data-count="700" data-suffix="+">0</dt><dd>Gyms outfitted</dd></div>
+      <div><dt data-count="42" data-suffix="">0</dt><dd>Commercial floors</dd></div>
+      <div><dt data-count="48" data-suffix="hr">0</dt><dd>Dispatch, in stock</dd></div>
+      <div><dt data-count="4.9" data-dec="1">0</dt><dd>Avg. rating / 312 reviews</dd></div>
+    </dl>
   </div>
-
-  <a class="hero__scroll" href="#proof" aria-label="Scroll down">
-    <span>Scroll</span>
-    <i></i>
-  </a>
 </section>
 
 <!-- ══════════════════════ TRACK MARQUEE ══════════════════════ -->
@@ -234,12 +196,12 @@
   </div>
 </section>
 
-<!-- ══════════════════════ RANGE ══════════════════════ -->
+<!-- ══════════════════════ CATALOGUE ══════════════════════ -->
 <section class="section range" id="range">
   <div class="wrap">
     <header class="sec-head sec-head--row">
       <div>
-        <p class="eyebrow reveal"><span class="eyebrow__dot"></span>The Range</p>
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span>The Catalogue</p>
         <h2 class="sec-title reveal">Everything between<br>you and the floor.</h2>
       </div>
       <a class="link-arrow reveal" href="#trade">Trade price list
@@ -247,155 +209,82 @@
       </a>
     </header>
 
-    <div class="cards">
-      <article class="card card--feature reveal">
-        <div class="card__art">
-          <svg viewBox="0 0 520 212" fill="none" aria-hidden="true">
-            <g class="bp-faint"><rect x="76" y="34" width="10" height="132"/><rect x="214" y="34" width="10" height="132"/><path d="M86 40h128"/></g>
-            <g class="bp-line">
-              <rect x="52" y="28" width="16" height="140"/><rect x="232" y="28" width="16" height="140"/>
-              <rect x="52" y="28" width="196" height="12"/>
-              <rect x="34" y="166" width="232" height="10"/>
-              <path d="M46 176v8h20v-8M234 176v8h20v-8"/>
-              <path d="M68 118h34M232 118h-34"/>
-            </g>
-            <g class="bp-accent">
-              <rect x="58" y="48" width="184" height="8" rx="4"/>
-              <path d="M96 48v8M136 48v8M176 48v8M216 48v8"/>
-              <rect x="14" y="84" width="272" height="7" rx="3.5"/>
-              <rect x="4" y="76" width="12" height="23" rx="2"/><rect x="284" y="76" width="12" height="23" rx="2"/>
-              <path d="M68 82h14v11H68zM232 82h-14v11h14z"/>
-            </g>
-            <g class="bp-hole">
-              <circle cx="60" cy="62" r="2.6"/><circle cx="60" cy="76" r="2.6"/><circle cx="60" cy="90" r="2.6"/><circle cx="60" cy="104" r="2.6"/><circle cx="60" cy="118" r="2.6"/><circle cx="60" cy="132" r="2.6"/><circle cx="60" cy="146" r="2.6"/>
-              <circle cx="240" cy="62" r="2.6"/><circle cx="240" cy="76" r="2.6"/><circle cx="240" cy="90" r="2.6"/><circle cx="240" cy="104" r="2.6"/><circle cx="240" cy="118" r="2.6"/><circle cx="240" cy="132" r="2.6"/><circle cx="240" cy="146" r="2.6"/>
-            </g>
-
-            <g class="bp-line">
-              <rect x="352" y="58" width="14" height="108"/><rect x="466" y="58" width="14" height="108"/>
-              <rect x="336" y="166" width="160" height="10"/>
-              <path d="M348 176v8h18v-8M466 176v8h18v-8"/>
-              <path d="M366 140h100"/>
-            </g>
-            <g class="bp-accent">
-              <rect x="318" y="96" width="196" height="7" rx="3.5"/>
-              <rect x="308" y="88" width="12" height="23" rx="2"/><rect x="512" y="88" width="12" height="23" rx="2"/>
-              <path d="M366 94h13v11h-13zM466 94h-13v11h13z"/>
-            </g>
-            <g class="bp-hole">
-              <circle cx="359" cy="76" r="2.4"/><circle cx="359" cy="90" r="2.4"/><circle cx="359" cy="104" r="2.4"/><circle cx="359" cy="118" r="2.4"/><circle cx="359" cy="132" r="2.4"/>
-              <circle cx="473" cy="76" r="2.4"/><circle cx="473" cy="90" r="2.4"/><circle cx="473" cy="104" r="2.4"/><circle cx="473" cy="118" r="2.4"/><circle cx="473" cy="132" r="2.4"/>
-            </g>
-
-            <text class="bp-label" x="150" y="202" text-anchor="middle">R6 · 1220 mm</text>
-            <text class="bp-label" x="416" y="202" text-anchor="middle">R3 · 1180 mm</text>
-          </svg>
-        </div>
-        <div class="card__body">
-          <span class="card__count">9 models · rigs to order</span>
+    <div class="cat-grid">
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_c252701f-2077-45ae-bc19-15f5f545cd5f_min.webp"
+               alt="Matte black Veles power rack with loaded barbell in J-cups" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">9 models · rigs to order</figcaption>
+        </figure>
+        <div class="cat__body">
           <h3>Racks &amp; Rigs</h3>
-          <p>Squat stands through to six-station rigs. Westside spacing through the working zone, laser-cut numbering, powder-coated to your colour on runs of ten or more.</p>
-          <span class="card__price">Retail from <b>$690</b> <i>· trade from $540</i></span>
+          <p>Squat stands through to six-station rigs. Westside spacing, laser-cut numbering, powder-coated to your colour on runs of ten or more.</p>
+          <span class="cat__price">Retail from <b>$690</b> <i>· trade from $540</i></span>
         </div>
       </article>
 
-      <article class="card reveal">
-        <div class="card__art">
-          <svg viewBox="0 0 300 200" fill="none" aria-hidden="true">
-            <g class="bp-accent"><rect x="14" y="94" width="272" height="12" rx="6"/></g>
-            <g class="bp-line">
-              <rect x="26" y="72" width="12" height="56" rx="3"/><rect x="262" y="72" width="12" height="56" rx="3"/>
-              <rect x="44" y="38" width="18" height="124" rx="4"/><rect x="66" y="48" width="16" height="104" rx="4"/>
-              <rect x="218" y="48" width="16" height="104" rx="4"/><rect x="240" y="38" width="18" height="124" rx="4"/>
-            </g>
-            <g class="bp-hatch">
-              <path d="M112 86v28M118 86v28M124 86v28M130 86v28M136 86v28"/>
-              <path d="M164 86v28M170 86v28M176 86v28M182 86v28M188 86v28"/>
-            </g>
-            <g class="bp-faint"><path d="M92 60v80M208 60v80"/></g>
-            <text class="bp-label" x="150" y="182" text-anchor="middle">20 kg · 2200 mm · 28 mm</text>
-          </svg>
-        </div>
-        <div class="card__body">
-          <span class="card__count">6 models</span>
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_89c4e568-6291-4009-bc41-725a1d357b92_min.webp"
+               alt="Close-up of barbell knurling with chalk dust" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">6 models</figcaption>
+        </figure>
+        <div class="cat__body">
           <h3>Barbells</h3>
           <p>28 mm power, 28.5 mm hybrid, 25 mm women's. 215,000 PSI shafts, bronze bushings, Cerakote or hard chrome.</p>
-          <span class="card__price">Retail from <b>$249</b> <i>· trade from $189</i></span>
+          <span class="cat__price">Retail from <b>$249</b> <i>· trade from $189</i></span>
         </div>
       </article>
 
-      <article class="card reveal">
-        <div class="card__art">
-          <svg viewBox="0 0 300 200" fill="none" aria-hidden="true">
-            <g class="bp-line"><circle cx="150" cy="100" r="72"/><circle cx="150" cy="100" r="58"/><circle cx="150" cy="100" r="26"/></g>
-            <g class="bp-accent"><circle cx="150" cy="100" r="19"/></g>
-            <g class="bp-faint"><path d="M150 28v20M150 152v20M78 100h20M202 100h20"/></g>
-            <text class="bp-note" x="150" y="106" text-anchor="middle">25</text>
-            <text class="bp-label" x="150" y="192" text-anchor="middle">450 mm · ±10 g calibrated</text>
-          </svg>
-        </div>
-        <div class="card__body">
-          <span class="card__count">4 ranges · by the tonne</span>
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_36817a56-ae55-4759-a5d7-d8de9f88b440_min.webp"
+               alt="Stack of black bumper plates with a calibrated steel plate" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">4 ranges · by the tonne</figcaption>
+        </figure>
+        <div class="cat__body">
           <h3>Plates &amp; Weights</h3>
           <p>Competition-calibrated, training bumpers, urethane and cast iron. Every set weighed to ±10 g before it's boxed.</p>
-          <span class="card__price">Retail from <b>$399</b> <i>/ 100 kg</i></span>
+          <span class="cat__price">Retail from <b>$399</b> <i>/ 100 kg</i></span>
         </div>
       </article>
 
-      <article class="card reveal">
-        <div class="card__art">
-          <svg viewBox="0 0 300 200" fill="none" aria-hidden="true">
-            <g class="bp-accent">
-              <path d="M104 106 L216 78 L222 96 L110 124 Z"/>
-              <rect x="40" y="104" width="60" height="18" rx="3"/>
-            </g>
-            <g class="bp-line">
-              <path d="M70 122v42M202 96v68"/>
-              <path d="M44 164h52M176 164h52"/>
-              <path d="M44 164v8M96 164v8M176 164v8M228 164v8"/>
-              <path d="M112 124 L150 164"/>
-              <path d="M186 92h30v9h-30"/>
-            </g>
-            <g class="bp-faint">
-              <path d="M104 106 L216 78" stroke-dasharray="5 5"/>
-              <path d="M118 132h10M126 140h10M134 148h10"/>
-            </g>
-            <text class="bp-label" x="150" y="192" text-anchor="middle">FID · 7-position · 400 kg</text>
-          </svg>
-        </div>
-        <div class="card__body">
-          <span class="card__count">7 models</span>
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_f5aa85c5-7d7d-49c2-aba9-0266bcf74d4e_min.webp"
+               alt="Black FID bench set up inside a power rack" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">7 models</figcaption>
+        </figure>
+        <div class="cat__body">
           <h3>Benches</h3>
           <p>Flat, FID and competition spec. 400 kg rated, ladder-adjust, 55 mm high-density pad that doesn't turn to porridge.</p>
-          <span class="card__price">Retail from <b>$329</b> <i>· trade from $255</i></span>
+          <span class="cat__price">Retail from <b>$329</b> <i>· trade from $255</i></span>
         </div>
       </article>
 
-      <article class="card card--accent reveal">
-        <div class="card__art">
-          <svg viewBox="0 0 300 200" fill="none" aria-hidden="true">
-            <g class="bp-accent">
-              <path d="M92 86V70c0-21 17-38 38-38s38 17 38 38v16h-14V70c0-13-11-24-24-24s-24 11-24 24v16Z"/>
-            </g>
-            <g class="bp-line">
-              <path d="M92 86c-22 11-36 33-36 58 0 22 33 36 74 36s74-14 74-36c0-25-14-47-36-58Z"/>
-            </g>
-            <g class="bp-faint"><path d="M64 128h132"/></g>
-            <g class="bp-line">
-              <rect x="218" y="106" width="12" height="46" rx="3"/>
-              <rect x="236" y="96" width="14" height="66" rx="3"/>
-              <rect x="256" y="106" width="12" height="46" rx="3"/>
-            </g>
-            <g class="bp-accent"><rect x="206" y="124" width="76" height="9" rx="4.5"/></g>
-            <g class="bp-faint"><path d="M40 178h220"/></g>
-            <text class="bp-label" x="150" y="194" text-anchor="middle">8–48 kg · powder-coat</text>
-          </svg>
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_2cabc3f6-e8c3-446d-9039-7e2dae1ce0b3_min.webp"
+               alt="Row of black kettlebells and rubber hex dumbbells" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">40+ SKUs · pallet rates</figcaption>
+        </figure>
+        <div class="cat__body">
+          <h3>Conditioning</h3>
+          <p>Kettlebells, dumbbells, sleds, ropes and bands. Urethane hex sets 5–50 kg with racks, priced by the set.</p>
+          <span class="cat__price">Retail from <b>$29</b> <i>· pallet rates on request</i></span>
         </div>
-        <div class="card__body">
-          <span class="card__count">40+ SKUs · pallet rates</span>
-          <h3>Conditioning &amp; Flooring</h3>
-          <p>Kettlebells, dumbbells, rubber tile, turf track, platforms, bands and sleds. Flooring quoted and laid by the square metre.</p>
-          <span class="card__price">Retail from <b>$29</b> <i>· pallet rates on request</i></span>
+      </article>
+
+      <article class="cat reveal">
+        <figure class="cat__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_d691d29f-37bc-480f-b891-768528a2ab25_min.webp"
+               alt="Dark turf sled lane with white lane markings beside rubber gym tiles" width="2048" height="1536" loading="lazy">
+          <figcaption class="cat__tag">Tile · turf · platforms</figcaption>
+        </figure>
+        <div class="cat__body">
+          <h3>Flooring &amp; Turf</h3>
+          <p>15 mm rubber tile, sled turf with lane paint to your spec, oak-inlay lifting platforms. Quoted and laid by the square metre.</p>
+          <span class="cat__price">From <b>$58</b> <i>/ sq m supplied + laid</i></span>
         </div>
       </article>
     </div>
@@ -415,29 +304,10 @@
 
     <div class="fitout-grid">
       <article class="fitout fitout--wide reveal">
-        <div class="facility facility--lanes">
-          <div class="facility__wall"></div>
-          <div class="leds leds--tight"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <svg class="facility__rig" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
-            <g class="sil">
-              <rect x="40" y="46" width="14" height="154"/><rect x="150" y="46" width="14" height="154"/>
-              <rect x="260" y="46" width="14" height="154"/><rect x="370" y="46" width="14" height="154"/>
-              <rect x="480" y="46" width="14" height="154"/>
-              <rect x="40" y="40" width="454" height="12"/>
-            </g>
-            <g class="sil-edge">
-              <path d="M40 40h454"/><path d="M40 46v154M150 46v154M260 46v154M370 46v154M480 46v154"/>
-            </g>
-          </svg>
-          <div class="facility__floor">
-            <span class="lane" style="--x:8%">1</span>
-            <span class="lane" style="--x:26%">2</span>
-            <span class="lane" style="--x:44%">3</span>
-            <span class="lane" style="--x:62%">4</span>
-            <span class="lane" style="--x:80%">5</span>
-          </div>
-          <div class="facility__vignette"></div>
-        </div>
+        <figure class="fitout__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_8e016307-ca68-45c9-9433-2cddc8d935f8_min.webp"
+               alt="Functional fitness facility with numbered turf lanes and illuminated wall panels" width="2048" height="1152" loading="lazy">
+        </figure>
         <div class="fitout__body">
           <div>
             <span class="fitout__tag">Functional racing floor</span>
@@ -453,26 +323,10 @@
       </article>
 
       <article class="fitout reveal">
-        <div class="facility facility--warm">
-          <div class="facility__wall"></div>
-          <div class="leds"><i></i><i></i><i></i><i></i><i></i></div>
-          <svg class="facility__rig" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
-            <g class="sil">
-              <rect x="60" y="60" width="16" height="140"/><rect x="180" y="60" width="16" height="140"/>
-              <rect x="300" y="60" width="16" height="140"/>
-              <rect x="60" y="54" width="256" height="12"/>
-              <rect x="96" y="150" width="64" height="18" rx="3"/>
-              <rect x="220" y="150" width="64" height="18" rx="3"/>
-            </g>
-            <g class="sil-edge"><path d="M60 54h256"/><path d="M60 60v140M180 60v140M300 60v140"/></g>
-          </svg>
-          <div class="facility__floor">
-            <span class="lane" style="--x:20%">1</span>
-            <span class="lane" style="--x:50%">2</span>
-            <span class="lane" style="--x:80%">3</span>
-          </div>
-          <div class="facility__vignette"></div>
-        </div>
+        <figure class="fitout__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_d7b9f72d-f00b-4f62-8f88-70fca22fc1b3_min.webp"
+               alt="Boutique strength studio with black steel rig and loaded barbells" width="2048" height="1152" loading="lazy">
+        </figure>
         <div class="fitout__body">
           <div>
             <span class="fitout__tag">Strength studio</span>
@@ -488,26 +342,10 @@
       </article>
 
       <article class="fitout reveal">
-        <div class="facility facility--cold">
-          <div class="facility__wall"></div>
-          <div class="leds leds--tight"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <svg class="facility__rig" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
-            <g class="sil">
-              <rect x="30" y="88" width="70" height="10" rx="3"/><rect x="30" y="98" width="12" height="102"/>
-              <rect x="130" y="88" width="70" height="10" rx="3"/><rect x="130" y="98" width="12" height="102"/>
-              <rect x="230" y="88" width="70" height="10" rx="3"/><rect x="230" y="98" width="12" height="102"/>
-              <rect x="330" y="88" width="60" height="10" rx="3"/><rect x="330" y="98" width="12" height="102"/>
-            </g>
-            <g class="sil-edge"><path d="M30 88h70M130 88h70M230 88h70M330 88h60"/></g>
-          </svg>
-          <div class="facility__floor">
-            <span class="lane" style="--x:14%">9</span>
-            <span class="lane" style="--x:38%">10</span>
-            <span class="lane" style="--x:62%">11</span>
-            <span class="lane" style="--x:86%">12</span>
-          </div>
-          <div class="facility__vignette"></div>
-        </div>
+        <figure class="fitout__media">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_8eb9f345-c09d-4b2b-9f04-f3a3e58d87ba_min.webp"
+               alt="Club performance gym with oak lifting platforms and squat stands" width="2048" height="1152" loading="lazy">
+        </figure>
         <div class="fitout__body">
           <div>
             <span class="fitout__tag">Club performance room</span>
@@ -530,93 +368,72 @@
   </div>
 </section>
 
-<!-- ══════════════════════ PACKAGES ══════════════════════ -->
+<!-- ══════════════════════ PACKAGES / PRICING ══════════════════════ -->
 <section class="section build" id="build">
   <div class="wrap">
     <header class="sec-head sec-head--center">
       <p class="eyebrow reveal"><span class="eyebrow__dot"></span>Packages</p>
-      <h2 class="sec-title reveal">Tell us the space.<br><em>We'll fill it properly.</em></h2>
-      <p class="sec-lede reveal">Three starting points, priced as complete packages. Swap anything out — we'll re-quote in a day and lay it out to scale before a dollar moves.</p>
+      <h2 class="sec-title reveal">A package for<br><em>every floor.</em></h2>
+      <p class="sec-lede reveal">Three starting points, priced complete. Swap anything out — we'll re-quote in a day and lay it out to scale before a dollar moves.</p>
     </header>
 
-    <div class="tabs reveal" role="tablist" aria-label="Packages">
-      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="p1" id="t1">The Floor</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">The Studio</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">The Garage</button>
-      <span class="tab__glider" id="glider" aria-hidden="true"></span>
-    </div>
-
-    <div class="panels">
-      <div class="panel is-active" role="tabpanel" id="p1" aria-labelledby="t1">
-        <div class="panel__main">
-          <span class="panel__tag">Commercial · club, box or full facility</span>
-          <h3>The Floor</h3>
-          <p>Forty-two commercial rooms and counting — strength studios, CrossFit boxes, footy clubs and one very good pub gym. Scaled layout, install crew, compliance docs, the lot.</p>
-          <ul class="spec-list">
-            <li><span>6-Station Modular Rig</span><b>Custom span &amp; branding</b></li>
-            <li><span>8 × Barbell Sets</span><b>Mixed power &amp; hybrid</b></li>
-            <li><span>2 Tonnes of Plates</span><b>Bumper + calibrated</b></li>
-            <li><span>Benches, DBs, KBs</span><b>Spec'd to headcount</b></li>
-            <li><span>Flooring, Turf &amp; Platforms</span><b>Supplied + laid</b></li>
-            <li><span>Layout, Install &amp; Sign-off</span><b>CAD plan, 2-week lead</b></li>
-          </ul>
-        </div>
-        <aside class="panel__price">
-          <span class="panel__was">Quoted per room</span>
-          <span class="panel__amt"><i>from&nbsp;$</i>24k</span>
-          <span class="panel__note">Site visit · CAD layout · Install crew</span>
-          <a class="btn btn--accent btn--block" href="#contact">Book a site visit</a>
-          <a class="btn btn--ghost btn--block" href="#trade">See trade terms</a>
-          <p class="panel__fine">Leasing and 30-day trade terms available on approval.</p>
-        </aside>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
-        <div class="panel__main">
-          <span class="panel__tag">PT studio &amp; small group · 80–150 sq m</span>
-          <h3>The Studio</h3>
-          <p>The room a trainer opens with. Enough stations to run twelve people at once without anybody standing around, and it scales by adding rig bays rather than starting again.</p>
-          <ul class="spec-list">
-            <li><span>4-Station Rig</span><b>Pull-up, landmine, storage</b></li>
-            <li><span>4 × Beast Bars 20 kg</span><b>215k PSI, Cerakote</b></li>
-            <li><span>800 kg Bumper Set</span><b>Training + calibrated</b></li>
-            <li><span>6 × FID Benches</span><b>400 kg rated</b></li>
-            <li><span>Dumbbells 5–40 kg</span><b>Urethane hex + rack</b></li>
-            <li><span>Rubber Tile &amp; 12 m Turf</span><b>Supplied + laid</b></li>
-          </ul>
-        </div>
-        <aside class="panel__price">
-          <span class="panel__was">$11,400 separately</span>
-          <span class="panel__amt"><i>$</i>8,900</span>
-          <span class="panel__note">Free national freight · Install available</span>
-          <a class="btn btn--accent btn--block" href="#contact">Get a written quote</a>
-          <a class="btn btn--ghost btn--block" href="#showroom">Walk it at the warehouse</a>
-          <p class="panel__fine">Most-quoted package — 31% of commercial enquiries.</p>
-        </aside>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
-        <div class="panel__main">
-          <span class="panel__tag">Home · double garage, 2.6 m ceiling</span>
+    <div class="plans">
+      <article class="plan reveal">
+        <div class="plan__head">
+          <span class="plan__tier">Home plan</span>
           <h3>The Garage</h3>
-          <p>Same steel we put on commercial floors, in the size that fits next to the car. Every piece upgrades into the studio package instead of getting sold on Marketplace.</p>
-          <ul class="spec-list">
-            <li><span>R6 Power Rack</span><b>4-post, 2.3 m, pull-up bar</b></li>
-            <li><span>Veles Beast Bar 20 kg</span><b>215k PSI, Cerakote</b></li>
-            <li><span>150 kg Calibrated Bumpers</span><b>±10 g tolerance</b></li>
-            <li><span>Competition Bench</span><b>IPF-spec pad + feet</b></li>
-            <li><span>Lifting Platform</span><b>2.4 × 2.4 m, oak inlay</b></li>
-          </ul>
         </div>
-        <aside class="panel__price">
-          <span class="panel__was">$2,240 separately</span>
-          <span class="panel__amt"><i>$</i>1,890</span>
-          <span class="panel__note">Free metro delivery · 10-yr frame warranty</span>
-          <a class="btn btn--accent btn--block" href="#showroom">See it on the floor</a>
-          <a class="btn btn--ghost btn--block" href="#contact">Get a written quote</a>
-          <p class="panel__fine">Or 4 payments of $472.50.</p>
-        </aside>
-      </div>
+        <ul class="plan__feats">
+          <li>R6 power rack, 2.3 m</li>
+          <li>Beast bar 20 kg</li>
+          <li>150 kg calibrated bumpers</li>
+          <li>Competition bench</li>
+          <li>2.4 m oak-inlay platform</li>
+        </ul>
+        <div class="plan__buy">
+          <span class="plan__price"><i>$</i>1,890</span>
+          <span class="plan__per">complete · free metro delivery</span>
+          <a class="btn btn--ghost btn--block" href="#contact">Get a quote</a>
+        </div>
+      </article>
+
+      <article class="plan plan--featured reveal">
+        <div class="plan__head">
+          <span class="plan__tier">Most quoted · PT &amp; small group</span>
+          <h3>The Studio</h3>
+        </div>
+        <ul class="plan__feats">
+          <li>4-station rig + storage</li>
+          <li>4 × Beast bars, 800 kg bumpers</li>
+          <li>6 × FID benches</li>
+          <li>Dumbbells 5–40 kg + rack</li>
+          <li>Rubber tile &amp; 12 m turf, laid</li>
+        </ul>
+        <div class="plan__buy">
+          <span class="plan__price"><i>$</i>8,900</span>
+          <span class="plan__per">complete · free national freight</span>
+          <a class="btn btn--accent btn--block" href="#contact">Get a quote</a>
+        </div>
+      </article>
+
+      <article class="plan reveal">
+        <div class="plan__head">
+          <span class="plan__tier">Commercial · club or facility</span>
+          <h3>The Floor</h3>
+        </div>
+        <ul class="plan__feats">
+          <li>6-station modular rig, branded</li>
+          <li>8 × bars, 2 t of plates</li>
+          <li>Benches, DBs, KBs to headcount</li>
+          <li>Flooring, turf &amp; platforms laid</li>
+          <li>CAD layout, install &amp; sign-off</li>
+        </ul>
+        <div class="plan__buy">
+          <span class="plan__price"><i>from $</i>24k</span>
+          <span class="plan__per">quoted per room · 30-day terms</span>
+          <a class="btn btn--ghost btn--block" href="#contact">Book a site visit</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -674,6 +491,12 @@
         <p class="eyebrow reveal"><span class="eyebrow__dot"></span>Trade &amp; wholesale</p>
         <h2 class="sec-title reveal">Buy it<br><em>at our cost + one.</em></h2>
         <p class="sec-lede reveal">Gyms, clubs, PTs, physios, schools and resellers. Open an account and the whole range reprices — no minimum order to get started, no annual spend to keep it.</p>
+
+        <figure class="trade__photo reveal">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3HV8BxJBXdMZoRRY3h4JdGtQNq3/hf_20260805_152954_6302cca1-bdf4-457d-8f4a-b025be66f2d6_min.webp"
+               alt="Veles warehouse aisle with pallet racking of boxed gym equipment" width="2016" height="1344" loading="lazy">
+          <figcaption>10,000 sq ft · Maribyrnong · forklift on site</figcaption>
+        </figure>
 
         <ul class="trade__list reveal">
           <li>
@@ -757,6 +580,59 @@
           <footer><b>Sam Ellison</b><span>Strength &amp; Conditioning · Werribee FC</span></footer>
         </li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FAQ ══════════════════════ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="faq__grid">
+      <header class="faq__head">
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span>FAQ</p>
+        <h2 class="sec-title reveal">Freight, warranty,<br><em>straight answers.</em></h2>
+        <p class="sec-lede reveal">The questions the trade desk answers every day. Anything else — call, we pick up.</p>
+        <a class="btn btn--ghost reveal" href="tel:+61431222960">Call 0431 222 960</a>
+      </header>
+
+      <div class="faq__list reveal">
+        <details class="qa" open>
+          <summary>How much is freight, and how long does it take?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>Melbourne metro is free over $500 and typically lands in 48 hours. Nationally we palletise and ship tail-lift to the door: Sydney/Adelaide 3–4 business days, Brisbane 4–5, Perth 6–8. Freight is free on orders over $1,500, otherwise quoted at checkout by postcode and dead weight.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What does the 10-year warranty actually cover?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>Structural steel — uprights, crossmembers, base — against failure or permanent deformation in normal use, transferable to a new owner. Moving parts, pads and upholstery carry two years, bar shafts are lifetime against bending under rated load. Finish wear, chalk and rust from outdoor storage aren't covered, and we'll say so up front.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Can I return something if I got it wrong?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>Thirty-day change of mind on anything still boxed and unmarked — you cover return freight, we refund in full. Opened but unused, we'll usually take it back with a 15% restock. Custom powder-coat and OEM runs are made to order, so they're quote-final.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Do you install, and where?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>Our own crews cover Victoria, and we run partner crews in NSW and QLD. Rigs, platforms and flooring are the usual scope — a studio takes a day, a full commercial room one to three. Install is quoted with the CAD layout so there are no surprises on the day.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Who qualifies for trade pricing?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>Any business with an ABN that trains people or sells equipment: gyms, studios, PTs, physios, schools, clubs and resellers. Apply with your ABN and a website or social account; approvals usually come back within one business day. Home-gym buyers get retail — which is still built on a wholesaler's margin.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Is what's on the site actually in stock?<span class="qa__icon" aria-hidden="true"></span></summary>
+          <div class="qa__body">
+            <p>If it says in stock, it's on a shelf in Maribyrnong — the site counts the same inventory the forklift does. Out-of-stock lines show the next container's ETA, and you can reserve against it with a 10% deposit that's refundable until the day it lands.</p>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </section>
@@ -892,9 +768,9 @@
 
     <div class="footer__cols">
       <div>
-        <h5>Range</h5>
+        <h5>Catalogue</h5>
         <a href="#range">Racks &amp; Rigs</a><a href="#range">Barbells</a><a href="#range">Plates</a>
-        <a href="#range">Benches</a><a href="#range">Conditioning &amp; Flooring</a>
+        <a href="#range">Benches</a><a href="#range">Flooring &amp; Turf</a>
       </div>
       <div>
         <h5>Commercial</h5>
@@ -904,7 +780,7 @@
       <div>
         <h5>Trade</h5>
         <a href="#trade">Open an account</a><a href="#trade">Volume pricing</a><a href="#trade">Dealer &amp; drop-ship</a>
-        <a href="#trade">Custom &amp; OEM</a>
+        <a href="#faq">FAQ &amp; warranty</a>
       </div>
       <div>
         <h5>Get in touch</h5>
@@ -917,7 +793,7 @@
 
     <div class="footer__bar">
       <p>© 2026 VELES Strength Pty Ltd · Maribyrnong, VIC · ABN 00 000 000 000</p>
-      <p class="footer__disclaimer">Concept site — unofficial mock-up. Products, prices, reviews, fitouts and addresses are illustrative.</p>
+      <p class="footer__disclaimer">Concept site — unofficial mock-up. Products, prices, reviews, fitouts and addresses are illustrative. Photography is AI-generated.</p>
     </div>
   </div>
 </footer>

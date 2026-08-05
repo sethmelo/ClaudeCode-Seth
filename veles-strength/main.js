@@ -8,24 +8,6 @@
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
-  /* ── Blueprint rack: generate the upright hole columns ──── */
-  (function drawHoles() {
-    const left = $('#holesL'), right = $('#holesR');
-    if (!left || !right) return;
-    const NS = 'http://www.w3.org/2000/svg';
-    for (let y = 128; y <= 420; y += 16) {
-      // holes read heavier through the bench/pull zone — the "Westside" band
-      const inBand = y > 200 && y < 320;
-      [[75, left], [345, right]].forEach(([x, g]) => {
-        const c = document.createElementNS(NS, 'circle');
-        c.setAttribute('cx', x);
-        c.setAttribute('cy', y);
-        c.setAttribute('r', inBand ? 3.6 : 3);
-        g.appendChild(c);
-      });
-    }
-  })();
-
   /* ── Sticky nav ─────────────────────────────────────────── */
   const nav = $('#nav');
   const onScroll = () => nav.classList.toggle('is-stuck', window.scrollY > 24);
@@ -55,7 +37,6 @@
         if (!entry.isIntersecting) return;
         const el = entry.target;
         const explicit = el.dataset.d;
-        // Stagger siblings within the same container for a rolling reveal.
         const delay = explicit !== undefined
           ? Number(explicit) * 90
           : Math.min(indexAmongPeers(el) * 80, 480);
@@ -101,45 +82,6 @@
     }
   }
 
-  /* ── Package tabs ───────────────────────────────────────── */
-  const tabs   = $$('.tab');
-  const panels = $$('.panel');
-  const glider = $('#glider');
-
-  const moveGlider = () => {
-    const active = $('.tab.is-active');
-    if (!active || !glider) return;
-    glider.style.width = active.offsetWidth + 'px';
-    glider.style.transform = `translateX(${active.offsetLeft - 5}px)`;
-  };
-
-  const selectTab = (i) => {
-    tabs.forEach((t, n) => {
-      const on = n === i;
-      t.classList.toggle('is-active', on);
-      t.setAttribute('aria-selected', String(on));
-      panels[n].classList.toggle('is-active', on);
-      panels[n].hidden = !on;
-    });
-    moveGlider();
-  };
-
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => selectTab(i));
-    t.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      const next = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
-      tabs[next].focus();
-      selectTab(next);
-    });
-  });
-
-  // Glider sizing depends on webfont metrics, so settle it after fonts load.
-  moveGlider();
-  window.addEventListener('resize', moveGlider);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveGlider);
-
   /* ── Testimonial carousel ───────────────────────────────── */
   const track = $('#qTrack');
   if (track) {
@@ -172,7 +114,6 @@
     window.addEventListener('resize', apply);
     apply();
 
-    // Touch swipe
     let x0 = null;
     track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', e => {
@@ -185,6 +126,16 @@
       x0 = null;
     }, { passive: true });
   }
+
+  /* ── FAQ: exclusive accordion ───────────────────────────── */
+  // The `name` attribute makes <details> groups exclusive natively;
+  // set it here so markup stays valid for older parsers.
+  const qas = $$('.qa');
+  qas.forEach(d => d.setAttribute('name', 'faq'));
+  // Fallback for engines without exclusive-details support.
+  qas.forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) qas.forEach(o => { if (o !== d && o.open) o.open = false; });
+  }));
 
   /* ── Budget chips ───────────────────────────────────────── */
   const chips = $$('.chip');
@@ -205,20 +156,5 @@
       if (fine) fine.hidden = true;
       form.querySelector('button[type="submit"]').textContent = 'Sent';
     });
-  }
-
-  /* ── Parallax drift on the hero blueprint ───────────────── */
-  const art = $('.rack-svg');
-  if (art && !reduced && window.matchMedia('(pointer:fine)').matches) {
-    let raf = null, tx = 0, ty = 0;
-    window.addEventListener('mousemove', (e) => {
-      tx = (e.clientX / window.innerWidth - 0.5) * 16;
-      ty = (e.clientY / window.innerHeight - 0.5) * 16;
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        art.style.translate = `${tx}px ${ty}px`;
-        raf = null;
-      });
-    }, { passive: true });
   }
 })();
