@@ -1,8 +1,8 @@
 # VELES Strength — concept site
 
 An unofficial mock landing page for [VELES Strength Melbourne](https://www.facebook.com/VelesStrength/),
-a Melbourne gym & fitness equipment supplier (home gyms, commercial fitouts, Maribyrnong warehouse,
-Australia-wide delivery, tagline *"tools for greatness"*).
+a Melbourne **gym equipment wholesaler** — home gyms, commercial fitouts, Maribyrnong
+warehouse, Australia-wide delivery, tagline *"tools for greatness"*.
 
 ## Running it
 
@@ -25,42 +25,56 @@ fonts/        Archivo + JetBrains Mono variable subsets (latin, 121 KB total)
 
 ## The consumer journey
 
-The page is sequenced to move someone from "never heard of them" to "I want to
-go there", with the showroom visit as the conversion moment rather than a cart:
+Sequenced to move someone from "never heard of them" to "these are the people
+who kit out my floor", with a trade account or a site visit as the conversion
+rather than a cart:
 
-1. **Hero** — the promise (`Tools for greatness`) plus the three numbers that
-   establish credibility before any scrolling: gyms outfitted, rating, dispatch time.
-2. **Marquee** — freight, warranty, showroom. Risk-removal, read in a glance.
-3. **Why Veles** — four pillars answering the four objections a buyer actually has
-   (is it strong enough / is it tested / when does it arrive / can I try it).
-4. **The Range** — five categories with entry prices, so nobody has to guess budget.
-5. **Build a Gym** — the decision shortcut. Three named packages by space
-   (Garage / Home Platform / Floor), each fully specced and priced.
-6. **The Steel** — the spec numbers, which is where a considered purchase is won.
-7. **Reviews** — 4.9 from 312, with named, specific, regional testimonials.
-8. **Showroom** — *"Come and pull on it."* The emotional close: address, hours,
-   parking, map, and a 30-minute floor session.
-9. **Quote form** — low-commitment capture with budget chips, not a checkout.
+1. **Hero** — the promise (`Tools for greatness`) plus the wholesale claim and
+   three credibility numbers: gyms outfitted, commercial floors, dispatch time.
+2. **Track marquee** — container direct, trade pricing, 30-day terms, stock depth.
+3. **Why wholesale with Veles** — four pillars on margin, stock depth, testing
+   and trying it before you buy.
+4. **The Range** — five categories carrying both retail and trade entry prices.
+5. **Fitouts** — *the floors we've built*. A wholesaler's real portfolio, since
+   the finished facility is what's actually being sold.
+6. **Packages** — commercial first (The Floor / The Studio / The Garage), each
+   fully specced and priced.
+7. **The Steel** — the spec numbers, where a considered purchase is won.
+8. **Trade & wholesale** — accounts, volume tiers, dealer/drop-ship, OEM, freight.
+9. **Reviews**, then the **warehouse and trade counter**, then a quote form.
 
 ## Art direction
 
-Reference points were Represent 247 (cinematic dark editorial, huge condensed
-display type), REVL (energy, high contrast) and STRONG Pilates (heavy display
-type, punchy accent colour).
+Built from a reference set of moody hardware photography, HYROX-style lit
+training floors, monochrome grain posters and turf-track signage. Three motifs
+carry the whole page:
 
-- **Palette** — forged black `#08080A` on bone `#F4F1EA`, single ember accent
-  `#FF4D1F` used only for actions, numbers and hot parts of a drawing.
-- **Type** — Archivo variable, run condensed and heavy (`font-stretch: 80–88%`)
-  for display, with JetBrains Mono for eyebrows, specs and labels — the mono
-  carries the "engineering document" register.
-- **Imagery** — no stock photography. Every product visual is hand-drawn inline
-  SVG technical line-art with dimension callouts, which suits a brand whose whole
-  argument is steel gauge and load ratings, and keeps the page fully self-contained.
-- **Motion** — staggered scroll reveals, counting stats, marquee, pointer parallax
-  on the hero blueprint. All of it collapses under `prefers-reduced-motion`.
+- **Cool industrial monochrome.** Near-black with a blue cast, cool white light,
+  and a single cyan-teal accent (`--accent`) used only for actions, live numbers
+  and hot parts of a drawing. Swapping the `--accent` / `--accent-ink` pair
+  re-skins the entire site.
+- **The lane track.** Turf laid in CSS perspective with painted lane lines and
+  numerals — used in the hero, the marquee, the fitout scenes and the closing CTA.
+- **Annotated technical line-art.** No stock photography. Every product visual is
+  hand-drawn inline SVG with dimension callouts and leader lines, which suits a
+  brand whose argument is steel gauge and load ratings, and keeps the page fully
+  self-contained.
+
+The fitout scenes are pure CSS/SVG: an illuminated panelled back wall, LED strip
+lighting, a black rig silhouette with a lit top edge, and the turf plane in
+perspective. Each room carries its own lighting temperature so the three don't
+read identical.
+
+Type is Archivo variable run condensed and heavy (`font-stretch: 70–86%`) for
+display, with JetBrains Mono for eyebrows, specs and labels — the mono carries
+the engineering-document register. Two grain layers (a drifting fine grain and a
+coarser static one) give flat panels the printed-poster texture of the references.
+
+Motion — staggered scroll reveals, counting stats, the marquee, pointer parallax
+on the hero blueprint — all collapses under `prefers-reduced-motion`.
 
 ## Notes
 
-Every product, price, spec, review, address and phone number on this page is
-illustrative mock content written for the concept. It is not affiliated with or
-endorsed by VELES Strength.
+Every product, price, spec, review, fitout, address and phone number on this page
+is illustrative mock content written for the concept. It is not affiliated with
+or endorsed by VELES Strength.
