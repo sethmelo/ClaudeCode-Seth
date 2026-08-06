@@ -18,12 +18,18 @@ import re
 import sys
 
 HERE = pathlib.Path(__file__).parent
-OUT = HERE / "veles-strength-preview.html"
 
-FONTS = {
-    "fonts/archivo-var-latin.woff2": None,
-    "fonts/jetbrainsmono-var-latin.woff2": None,
+# theme attribute value -> output filename. The dark build is the default
+# document; the light build only differs by data-theme on <html>.
+BUILDS = {
+    None: "veles-strength-preview.html",
+    "light": "veles-strength-preview-light.html",
 }
+
+FONTS = (
+    "fonts/archivo-var-latin.woff2",
+    "fonts/jetbrainsmono-var-latin.woff2",
+)
 
 
 def data_uri(path: pathlib.Path) -> str:
@@ -32,7 +38,7 @@ def data_uri(path: pathlib.Path) -> str:
 
 
 def main() -> int:
-    html = (HERE / "index.html").read_text(encoding="utf-8")
+    base = (HERE / "index.html").read_text(encoding="utf-8")
     css = (HERE / "styles.css").read_text(encoding="utf-8")
     js = (HERE / "main.js").read_text(encoding="utf-8")
 
@@ -47,6 +53,8 @@ def main() -> int:
         if css == before:
             print(f"font reference not found in styles.css: {rel}", file=sys.stderr)
             return 1
+
+    html = base
 
     # Guard against a closing tag inside the payload breaking the document.
     if "</style" in css.lower() or "</script" in js.lower():
@@ -74,8 +82,18 @@ def main() -> int:
         print(f"expected 1 script tag, found {n}", file=sys.stderr)
         return 1
 
-    OUT.write_text(html, encoding="utf-8")
-    print(f"{OUT.name}  {OUT.stat().st_size / 1024:.0f} KB")
+    for theme, filename in BUILDS.items():
+        out = HERE / filename
+        doc = html
+        if theme:
+            doc, n = re.subn(r"<html lang=\"en-AU\">",
+                             f'<html lang="en-AU" data-theme="{theme}">', doc)
+            if n != 1:
+                print(f"expected 1 <html> tag, found {n}", file=sys.stderr)
+                return 1
+            doc = doc.replace('content="#0A0B0C"', 'content="#F4F2ED"')
+        out.write_text(doc, encoding="utf-8")
+        print(f"{out.name}  {out.stat().st_size / 1024:.0f} KB")
     return 0
 
 

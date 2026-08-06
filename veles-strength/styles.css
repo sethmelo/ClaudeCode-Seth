@@ -956,3 +956,155 @@ table{ border-collapse:collapse; width:100%; }
   .reveal{ opacity:1; transform:none; }
   .grain{ display:none; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHT THEME  —  set data-theme="light" on <html>
+   The photo wells, the track marquee and the footer stay dark on
+   purpose: the photography is low-key, so those dark insets are what
+   give the light page its contrast and keep overlay text readable.
+   ═══════════════════════════════════════════════════════════ */
+:root[data-theme="light"]{
+  --ink:        #F4F2ED;
+  --ink-2:      #EBE8E1;
+  --surface:    #FFFFFF;
+  --surface-2:  #FBFAF7;
+  --line:       #DDD8CE;
+  --line-soft:  #E7E3DA;
+
+  --bone:       #12161A;
+  --bone-dim:   #59636A;
+  --steel:      #7A848A;
+
+  --accent:     #0A7A68;   /* darkened for 5.4:1 on white */
+  --accent-2:   #12A88F;
+  --accent-dim: rgba(10,122,104,.10);
+  --accent-ink: #FFFFFF;
+
+  --turf:       #101416;
+
+  /* For content sitting on a dark photo well, where the page ink
+     would be invisible. */
+  --on-media:        #F2F5F6;
+  --on-media-accent: #2FE3C8;
+}
+
+/* Backdrops ------------------------------------------------ */
+[data-theme="light"] .blueprint{
+  background-image:
+    linear-gradient(to right, rgba(18,22,26,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18,22,26,.05) 1px, transparent 1px);
+}
+[data-theme="light"] .glow--a{ background:radial-gradient(circle, rgba(10,122,104,.10), transparent 66%); }
+[data-theme="light"] .glow--c{ background:radial-gradient(ellipse, rgba(10,122,104,.07), transparent 68%); }
+[data-theme="light"] .glow--d{ background:radial-gradient(ellipse, rgba(10,122,104,.13), transparent 66%); }
+[data-theme="light"] .grain{ opacity:.028; mix-blend-mode:multiply; }
+[data-theme="light"] .grain--static{ opacity:.045; mix-blend-mode:multiply; }
+[data-theme="light"] .cta__floor{
+  background-color:#E7E3DA;
+  background-image:repeating-linear-gradient(90deg, transparent 0 165px, rgba(18,22,26,.16) 165px 170px);
+  opacity:.55;
+}
+
+/* Cards gain depth from shadow rather than from a lighter fill ---- */
+[data-theme="light"] .cat,
+[data-theme="light"] .fitout,
+[data-theme="light"] .plan,
+[data-theme="light"] .pillar,
+[data-theme="light"] .quote,
+[data-theme="light"] .qa,
+[data-theme="light"] .spec,
+[data-theme="light"] .form,
+[data-theme="light"] .trade__panel,
+[data-theme="light"] .fitout__cta{
+  box-shadow:0 1px 2px rgba(18,22,26,.04), 0 10px 26px -14px rgba(18,22,26,.14);
+}
+[data-theme="light"] .btn--accent{ box-shadow:0 8px 26px -14px rgba(10,122,104,.9); }
+[data-theme="light"] .nav.is-stuck{ background:rgba(244,242,237,.85); }
+[data-theme="light"] .pillar__no{ -webkit-text-stroke-color:rgba(18,22,26,.28); }
+
+/* Dark photo wells ---------------------------------------- */
+[data-theme="light"] .cat__media,
+[data-theme="light"] .fitout__media,
+[data-theme="light"] .trade__photo{ background:#0E1113; }
+[data-theme="light"] .no-photo{ background-color:#0E1113; }
+[data-theme="light"] .cat__tag,
+[data-theme="light"] .trade__photo figcaption{ color:var(--on-media); }
+
+/* Hero card sits on photography, so it keeps the dark-theme values -- */
+[data-theme="light"] .hero-card{
+  border-color:#20262B;
+  box-shadow:0 30px 70px -40px rgba(18,22,26,.5);
+}
+/* Everything inside the card sits on photography, so it inherits the
+   light-on-dark ink rather than the page ink. */
+[data-theme="light"] .hero-card{ color:var(--on-media); }
+[data-theme="light"] .hero-card .btn::after{ background:var(--on-media); }
+[data-theme="light"] .hero-card .btn--ghost,
+[data-theme="light"] .hero-card .btn--glass{
+  --btn-fg:var(--on-media); --btn-bd:rgba(242,245,246,.34);
+}
+[data-theme="light"] .hero-card .btn--ghost:hover,
+[data-theme="light"] .hero-card .btn--glass:hover{ color:#0A0B0C; border-color:var(--on-media); }
+[data-theme="light"] .hours__addr{ color:#9BA5AA; }
+[data-theme="light"] .hours__cell i{ color:#8A949A; }
+[data-theme="light"] .hours__note{ color:#78828A; }
+[data-theme="light"] .hero__title em{
+  background:linear-gradient(100deg, var(--on-media-accent) 8%, #8FF5E6 55%, var(--on-media-accent) 92%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+[data-theme="light"] .hero-card .btn--accent{
+  --btn-bg:var(--on-media-accent); --btn-fg:#04211D; --btn-bd:var(--on-media-accent);
+  box-shadow:0 8px 30px -12px rgba(47,227,200,.65);
+}
+[data-theme="light"] .hero-card .btn--accent:hover{ color:#0A0B0C; }
+[data-theme="light"] .hours__chip{ background:var(--on-media-accent); color:#04211D; }
+[data-theme="light"] .hours__addr svg{ color:var(--on-media-accent); }
+
+/* Track marquee stays a dark graphic band ----------------- */
+[data-theme="light"] .track{ border-block-color:#DDD8CE; }
+[data-theme="light"] .track span{ color:var(--on-media); }
+
+/* Featured plan inverts, so the recommended tier still leads ---- */
+[data-theme="light"] .plan--featured{
+  background:linear-gradient(165deg,#171C20,#0E1113);
+  border-color:#171C20; color:var(--on-media);
+  box-shadow:0 24px 56px -28px rgba(18,22,26,.5);
+}
+[data-theme="light"] .plan--featured:hover{ border-color:#2A3238; }
+[data-theme="light"] .plan--featured .plan__tier{ color:var(--on-media-accent); }
+[data-theme="light"] .plan--featured .plan__per{ color:#8A949A; }
+[data-theme="light"] .plan--featured .plan__feats li{
+  color:#B8C1C6; border-bottom-color:rgba(255,255,255,.09);
+}
+[data-theme="light"] .plan--featured .plan__feats li::before{
+  border-color:var(--on-media-accent); background-color:rgba(47,227,200,.14);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232FE3C8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+}
+[data-theme="light"] .plan--featured .plan__price i{ color:var(--on-media-accent); }
+[data-theme="light"] .plan--featured .btn--accent{
+  --btn-bg:var(--on-media-accent); --btn-fg:#04211D; --btn-bd:var(--on-media-accent);
+}
+[data-theme="light"] .plan--featured .btn--accent:hover{ color:#0A0B0C; }
+
+/* Trade panel + map --------------------------------------- */
+[data-theme="light"] .trade__panel{ background:linear-gradient(165deg,#FFFFFF,#F8F6F1); }
+[data-theme="light"] .map{ background:#EBE8E1; }
+[data-theme="light"] .map__roads{ stroke:#FFFFFF; }
+[data-theme="light"] .map__blocks{ fill:#E1DDD3; stroke:#D5CFC3; }
+[data-theme="light"] .map__water{ fill:#CFE1E4; }
+[data-theme="light"] .map__pin circle{ fill:#FFFFFF; }
+[data-theme="light"] .map__pin path{ filter:drop-shadow(0 6px 14px rgba(10,122,104,.45)); }
+[data-theme="light"] .map__chip{ background:rgba(255,255,255,.92); border-color:var(--line); }
+
+/* Dark footer anchors the page ---------------------------- */
+[data-theme="light"] .footer{ background:#0E1113; border-top-color:#0E1113; color:var(--on-media); }
+[data-theme="light"] .footer .logo__mark{ color:var(--on-media); }
+[data-theme="light"] .footer .logo__type em{ color:#78828A; }
+[data-theme="light"] .footer__tag{ color:#8A949A; }
+[data-theme="light"] .footer__cols h5{ color:var(--on-media-accent); }
+[data-theme="light"] .footer__cols a{ color:#9BA5AA; }
+[data-theme="light"] .footer__cols a:hover{ color:var(--on-media); }
+[data-theme="light"] .footer__top,
+[data-theme="light"] .footer__cols,
+[data-theme="light"] .footer__bar{ border-color:rgba(255,255,255,.09); }
+[data-theme="light"] .footer__bar{ color:#78828A; }
