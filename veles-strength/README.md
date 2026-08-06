@@ -60,8 +60,10 @@ carry the whole page:
 - **Cinematic AI photography.** Eleven Soul Cinema shots (hero, six catalogue
   categories, three fitouts, warehouse) generated to one art direction: matte
   black steel, cool white LEDs, teal glow, no people. They are hot-linked from
-  the generation CDN, not vendored into the repo — swap the URLs in index.html
-  for local files to make the site fully self-contained.
+  the generation CDN rather than vendored into the repo — swap the URLs in
+  index.html for local files to make the site fully self-contained. Because the
+  host is remote, any shot that fails to load is detected in JS and its frame
+  falls back to a lit dark panel (`.no-photo`) rather than a broken image.
 
 Type is Archivo variable run condensed and heavy (`font-stretch: 70–86%`) for
 display, with JetBrains Mono for eyebrows, specs and labels — the mono carries

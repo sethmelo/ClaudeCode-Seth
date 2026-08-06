@@ -876,6 +876,20 @@ table{ border-collapse:collapse; width:100%; }
 }
 .footer__disclaimer{ opacity:.7; }
 
+/* ── Photo fallback ──────────────────────────────────────── */
+/* Set by main.js when a remote shot fails: hide the broken image and let
+   the frame stand on its own as a lit dark panel. */
+.no-photo img{ display:none; }
+.no-photo{
+  background-color:var(--ink-2);
+  background-image:
+    radial-gradient(ellipse 80% 70% at 50% 10%, rgba(232,247,255,.07), transparent 70%),
+    linear-gradient(to right, rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size:auto, 42px 42px, 42px 42px;
+}
+.hero-card.no-photo{ background-color:var(--surface); }
+
 /* ── Reveal ──────────────────────────────────────────────── */
 .reveal{ opacity:0; transform:translateY(26px); }
 .reveal.in{

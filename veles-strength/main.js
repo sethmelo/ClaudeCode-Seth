@@ -137,6 +137,27 @@
     if (d.open) qas.forEach(o => { if (o !== d && o.open) o.open = false; });
   }));
 
+  /* ── Photo fallback ─────────────────────────────────────── */
+  // The photography is hosted remotely. If a shot fails to load, drop the
+  // broken <img> so its styled frame reads as an intentional dark panel
+  // rather than a broken-image icon.
+  const photos = $$('img');
+  const markFailed = (img) => {
+    const frame = img.closest('.cat__media, .fitout__media, .trade__photo, .hero-card');
+    if (frame) frame.classList.add('no-photo');
+  };
+  // Lazy images error at unpredictable times, so sweep rather than trusting a
+  // single event: a decoded image has naturalWidth > 0, a failed one doesn't.
+  const sweep = () => photos.forEach(img => {
+    if (img.complete && img.naturalWidth === 0) markFailed(img);
+  });
+  photos.forEach(img => img.addEventListener('error', () => markFailed(img)));
+  window.addEventListener('load', sweep);
+  window.addEventListener('scroll', sweep, { passive: true });
+  const sweeper = setInterval(sweep, 500);
+  setTimeout(() => clearInterval(sweeper), 15000);
+  sweep();
+
   /* ── Budget chips ───────────────────────────────────────── */
   const chips = $$('.chip');
   chips.forEach(chip => chip.addEventListener('click', () => {
