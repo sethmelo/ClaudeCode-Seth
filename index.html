@@ -8,14 +8,14 @@
 <meta name="description" content="Emergency plumber Adelaide, 24/7. Burst pipes, gas leaks &amp; blocked drains sorted fast. Licensed, insured, 13+ years. Call 1300 PLATINUM.">
 <meta name="theme-color" content="#1a1d21">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://platinumplumbingandgas.com.au/">
+<link rel="canonical" href="https://platinumplumbingandgas.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_AU">
 <meta property="og:site_name" content="Platinum Plumbing &amp; Gas Solutions">
 <meta property="og:title" content="24/7 Emergency Plumber Adelaide | Platinum Plumbing &amp; Gas">
 <meta property="og:description" content="Burst pipe? Gas leak? Blocked drain? 24/7 emergency plumber for Adelaide and all of South Australia. Call 1300 PLATINUM.">
-<meta property="og:url" content="https://platinumplumbingandgas.com.au/">
+<meta property="og:url" content="https://platinumplumbingandgas.com/">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,19 +24,20 @@
 
 <!-- ============================================================
      JSON-LD: LocalBusiness + Plumber
-     TODO (owner): replace streetAddress, postalCode, geo coordinates,
-     the real domain, the Facebook URL and the priceRange before go-live.
+     Verified from public listings: domain, Edwardstown SA base, Facebook and
+     Instagram. TODO (owner): street address, exact geo coordinates and
+     priceRange.
      ============================================================ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["Plumber", "LocalBusiness"],
-  "@id": "https://platinumplumbingandgas.com.au/#business",
+  "@id": "https://platinumplumbingandgas.com/#business",
   "name": "Platinum Plumbing & Gas Solutions",
   "description": "24/7 emergency plumber and licensed gasfitter servicing Adelaide and all of South Australia. Burst pipes, gas leaks, blocked drains, hot water and backflow prevention.",
-  "url": "https://platinumplumbingandgas.com.au/",
+  "url": "https://platinumplumbingandgas.com/",
   "telephone": "+611300752846",
-  "email": "info@platinumplumbingandgas.com.au",
+  "email": "info@platinumplumbingandgas.com",
   "priceRange": "$$",
   "founder": {
     "@type": "Person",
@@ -46,9 +47,9 @@
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "PLACEHOLDER — street address",
-    "addressLocality": "Adelaide",
+    "addressLocality": "Edwardstown",
     "addressRegion": "SA",
-    "postalCode": "5000",
+    "postalCode": "5039",
     "addressCountry": "AU"
   },
   "geo": {
@@ -66,7 +67,10 @@
     "opens": "00:00",
     "closes": "23:59"
   }],
-  "sameAs": ["https://www.facebook.com/PLACEHOLDER"],
+  "sameAs": [
+    "https://www.facebook.com/p/Platinum-Plumbing-Gas-Solutions-100063718951102/",
+    "https://www.instagram.com/platinumplumbingandgas/"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Emergency plumbing and gas services",
@@ -83,18 +87,39 @@
 </script>
 
 <style>
-/* ---------- Tokens ---------- */
+/* ============================================================
+   BRAND COLOURS — the only block you need to touch to re-skin
+   the whole site. Every other rule derives from these six.
+   Drop the hex codes from the Platinum logo / existing site in
+   here and the entire page follows.
+   ============================================================ */
 :root{
-  --charcoal:#1a1d21;
+  /* Darkest surface: page background, footer */
+  --brand-dark:#1a1d21;
+  /* Metallic mid-tone: body text, icons, rules, logo mark */
+  --brand-metal:#c8ccd0;
+  /* Brightest tone: headings, emphasis */
+  --brand-light:#eef0f2;
+  /* Action colour: CTAs only — buttons, call bar, tel/sms links */
+  --brand-action:#ff6b1a;
+  /* Pressed/hover state of the action colour (~12% darker) */
+  --brand-action-dark:#e85a0c;
+  /* "We're open" status indicator */
+  --brand-status:#39d353;
+}
+
+/* ---------- Derived tokens (leave these alone) ---------- */
+:root{
+  --charcoal:var(--brand-dark);
   --charcoal-2:#212529;
   --charcoal-3:#282d33;
   --line:#343a41;
-  --platinum:#c8ccd0;
-  --platinum-bright:#eef0f2;
+  --platinum:var(--brand-metal);
+  --platinum-bright:var(--brand-light);
   --muted:#8e959c;
-  --orange:#ff6b1a;
-  --orange-dark:#e85a0c;
-  --green:#39d353;
+  --orange:var(--brand-action);
+  --orange-dark:var(--brand-action-dark);
+  --green:var(--brand-status);
   --radius:4px;
   --wrap:1180px;
   --pad:20px;
@@ -204,6 +229,22 @@ section{padding-block:clamp(56px,10vw,104px)}
     radial-gradient(760px 420px at 6% 104%,rgba(200,204,208,.07),transparent 66%),
     var(--charcoal);
 }
+/* OPTIONAL HERO BACKGROUND PHOTO
+   To put a real photo behind the hero (a van shot or a job in progress),
+   save it as images/hero.jpg at 1920x1080 or larger, then uncomment:
+
+   .hero{
+     background:
+       linear-gradient(rgba(26,29,33,.9),rgba(26,29,33,.96)),
+       url("images/hero.jpg") center/cover no-repeat,
+       var(--charcoal);
+   }
+
+   Keep the dark gradient on top — the white headline and the orange CTA
+   both need it to stay readable over a photo. Export at quality ~70 and
+   keep it under ~250KB. Photos do not count towards the 200KB page budget,
+   but they do affect how fast the hero paints on mobile data. */
+
 /* Faint industrial grid — pure CSS, zero bytes of image weight */
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;
@@ -286,13 +327,9 @@ section{padding-block:clamp(56px,10vw,104px)}
 .why{background:var(--charcoal-2);border-block:1px solid var(--line)}
 .why-grid{display:grid;gap:34px}
 /* Image placeholder */
-.photo-ph{
-  position:relative;aspect-ratio:4/3;border:2px dashed #454c54;border-radius:var(--radius);
-  background:repeating-linear-gradient(45deg,#212529,#212529 12px,#242a30 12px,#242a30 24px);
-  display:grid;place-items:center;text-align:center;padding:26px;
-}
-.photo-ph span{font-size:.8125rem;color:var(--muted);max-width:32ch;line-height:1.55}
-.photo-ph b{display:block;font-family:var(--head);font-size:1rem;letter-spacing:.1em;color:var(--platinum);margin-bottom:8px;text-transform:uppercase}
+/* Owner photo: same drop-in-an-img pattern as the gallery, at 4:3 */
+.photo-ph{aspect-ratio:4/3;border:2px dashed #454c54}
+.photo-ph::after{font-size:.8125rem;padding:26px}
 .why-points{display:grid;gap:18px;margin-top:26px}
 .why-points li{display:flex;gap:14px;align-items:flex-start}
 .why-points svg{flex:none;margin-top:3px;color:var(--platinum)}
@@ -302,6 +339,33 @@ section{padding-block:clamp(56px,10vw,104px)}
 .stats div{background:var(--charcoal);padding:20px 12px;text-align:center}
 .stat-n{display:block;font-size:1.875rem;color:var(--platinum-bright);font-weight:700}
 .stat-l{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Work gallery ---------- */
+/* Each slot shows a hatched placeholder until a real <img> is dropped in.
+   The image sits above the placeholder and covers it, so adding a photo is
+   a one-line change with nothing to delete. aspect-ratio reserves the box
+   before the image loads, so there is no layout shift. */
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:38px}
+.shot{
+  position:relative;aspect-ratio:1/1;overflow:hidden;margin:0;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:repeating-linear-gradient(45deg,#212529,#212529 10px,#242a30 10px,#242a30 20px);
+}
+.shot::after{
+  content:attr(data-ph);position:absolute;inset:0;z-index:0;
+  display:grid;place-items:center;padding:14px;text-align:center;
+  white-space:pre-line;
+  font-size:.6875rem;line-height:1.5;color:var(--muted);
+}
+.shot img{
+  position:relative;z-index:1;width:100%;height:100%;object-fit:cover;
+  transition:transform .35s ease;
+}
+.shot:hover img{transform:scale(1.04)}
+.shots-note{margin-top:18px;font-size:.8125rem;color:var(--muted)}
+/* Social links are not calls-to-action, so they stay off the orange. */
+.shots-note a{color:var(--platinum-bright);text-decoration:underline;text-underline-offset:3px}
+.shots-note a:hover{color:#fff}
 
 /* ---------- Testimonials ---------- */
 .reviews{display:grid;gap:16px;margin-top:38px}
@@ -433,6 +497,7 @@ section{padding-block:clamp(56px,10vw,104px)}
   .trust li:nth-child(odd){border-right:1px solid var(--line)}
   .grid{grid-template-columns:repeat(2,1fr);gap:20px}
   .reviews{grid-template-columns:repeat(3,1fr)}
+  .shots{grid-template-columns:repeat(3,1fr);gap:14px}
   .why-grid,.quote-grid{grid-template-columns:1fr 1fr;gap:48px;align-items:center}
   .form-card{padding:34px 32px}
   .foot-grid{grid-template-columns:2fr 1fr 1fr;gap:40px}
@@ -443,6 +508,7 @@ section{padding-block:clamp(56px,10vw,104px)}
 /* ================= 1024px+ ================= */
 @media (min-width:1024px){
   .grid{grid-template-columns:repeat(3,1fr);gap:22px}
+  .shots{grid-template-columns:repeat(3,1fr);gap:18px}
   .hero-sub{font-size:1.3125rem}
   .scroll-hint{
     display:flex;align-items:center;gap:10px;margin-top:52px;
@@ -478,6 +544,7 @@ section{padding-block:clamp(56px,10vw,104px)}
   .js-anim .fade{opacity:1;transform:none}
   .dot::after{display:none}
   .btn:hover,.card:hover{transform:none}
+  .shot:hover img{transform:none}
 }
 </style>
 
@@ -499,6 +566,9 @@ section{padding-block:clamp(56px,10vw,104px)}
 <header class="site-head">
   <div class="wrap head-in">
     <a class="brand" href="#top" aria-label="Platinum Plumbing and Gas Solutions — home">
+      <!-- To use the real logo instead of the "P" mark, save it as
+           images/logo.svg (or .png at 2x) and swap this span for:
+           <img class="brand-mark" src="images/logo.svg" alt="" width="38" height="38"> -->
       <span class="brand-mark" aria-hidden="true">P</span>
       <span class="brand-name">Platinum Plumbing
         <span class="brand-sub">&amp; Gas Solutions</span>
@@ -654,20 +724,15 @@ section{padding-block:clamp(56px,10vw,104px)}
     <div class="wrap why-grid">
       <div class="fade">
         <!-- ============================================================
-             IMAGE PLACEHOLDER — swap this whole div for a real photo.
-             What to drop in: a landscape (4:3) photo of Natt Barber in
-             Platinum work gear standing beside the sign-written van, shot
-             outdoors in daylight on an Adelaide street. Real face, real van —
-             no stock photography, it's the single biggest trust lift here.
-             Replace with, keeping https, lazy loading and explicit dimensions:
-
-             <img src="https://YOUR-CDN/natt-barber-platinum-van.jpg"
-                  alt="Natt Barber, licensed plumber and owner of Platinum Plumbing & Gas Solutions, standing beside the company van in Adelaide"
-                  width="1200" height="900" loading="lazy" decoding="async">
+             OWNER PHOTO — the single biggest trust lift on the page.
+             Save images/natt-and-van.jpg and uncomment the <img> below.
+             Ideal shot: Natt in Platinum work gear beside the sign-written
+             van, outdoors in daylight on an Adelaide street. Landscape 4:3,
+             1200x900 or larger. Real photo, not stock.
              ============================================================ -->
-        <div class="photo-ph" role="img" aria-label="Placeholder for a photo of Natt Barber with the Platinum Plumbing van">
-          <span><b>Photo goes here</b>Natt with the sign-written van — landscape 4:3, minimum 1200&times;900, daylight, Adelaide street. Real photo only.</span>
-        </div>
+        <figure class="shot photo-ph" data-ph="PHOTO GOES HERE&#10;Natt with the sign-written van&#10;Landscape 4:3, 1200&times;900 or larger, daylight.">
+          <!-- <img src="images/natt-and-van.jpg" alt="Natt Barber, licensed plumber and owner of Platinum Plumbing &amp; Gas Solutions, standing beside the company van in Adelaide" width="1200" height="900" loading="lazy" decoding="async"> -->
+        </figure>
       </div>
 
       <div>
@@ -700,6 +765,64 @@ section{padding-block:clamp(56px,10vw,104px)}
           <div><span class="stat-n">SA</span><span class="stat-l">Wide</span></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ RECENT WORK GALLERY ============ -->
+  <section id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <p class="eyebrow fade">Recent Jobs</p>
+      <h2 id="work-h" class="fade">Work from around Adelaide</h2>
+      <p class="lede fade">Real jobs, real vans, real repairs. Straight off the tools.</p>
+
+      <!-- ============================================================
+           IMAGE SLOTS — six photos from the Platinum Instagram
+           (@platinumplumbingandgas) or the Google Business Profile.
+
+           HOW TO ADD THEM (about ten minutes):
+           1. Save the six photos you want into an "images" folder next to
+              this file, named job-01.jpg through job-06.jpg.
+           2. Crop them square (1:1) and export at 800x800, quality ~75.
+              Keep each file under ~120KB so the page stays fast.
+           3. Uncomment the <img> tag in each figure below and correct the
+              alt text to describe that specific photo.
+           The hatched placeholder disappears on its own once the image is
+           in — there is nothing to delete.
+
+           DO NOT hotlink straight from Instagram or Google. Those CDN URLs
+           (scontent-*.cdninstagram.com, lh3.googleusercontent.com) are
+           signed and time-limited: they expire and the photos silently turn
+           into broken images. Always save the files and self-host them.
+
+           For sharper photos on retina screens, add srcset once you have a
+           1600px export as well:
+           <img src="images/job-01.jpg"
+                srcset="images/job-01.jpg 800w, images/job-01@2x.jpg 1600w"
+                sizes="(min-width:1024px) 33vw, 50vw"
+                alt="..." width="800" height="800" loading="lazy" decoding="async">
+           ============================================================ -->
+      <div class="shots fade">
+        <figure class="shot" data-ph="Instagram photo 1&#10;Burst pipe repair, Edwardstown">
+          <!-- <img src="images/job-01.jpg" alt="Copper pipe repair under a house at Edwardstown" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+        <figure class="shot" data-ph="Instagram photo 2&#10;Gas meter and line work">
+          <!-- <img src="images/job-02.jpg" alt="Licensed gasfitter working on a domestic gas meter" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+        <figure class="shot" data-ph="Instagram photo 3&#10;Blocked drain, camera inspection">
+          <!-- <img src="images/job-03.jpg" alt="Drain camera inspection of a blocked sewer line" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+        <figure class="shot" data-ph="Instagram photo 4&#10;Hot water unit replacement">
+          <!-- <img src="images/job-04.jpg" alt="New gas hot water system installed against a brick wall" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+        <figure class="shot" data-ph="Instagram photo 5&#10;Storm water and roof work">
+          <!-- <img src="images/job-05.jpg" alt="Storm water downpipe and guttering repair on an Adelaide roof" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+        <figure class="shot" data-ph="Instagram photo 6&#10;The Platinum van on site">
+          <!-- <img src="images/job-06.jpg" alt="The sign-written Platinum Plumbing and Gas Solutions van parked at a job" width="800" height="800" loading="lazy" decoding="async"> -->
+        </figure>
+      </div>
+
+      <p class="shots-note fade">More jobs on <a href="https://www.instagram.com/platinumplumbingandgas/" rel="noopener" target="_blank">Instagram</a> and <a href="https://www.facebook.com/p/Platinum-Plumbing-Gas-Solutions-100063718951102/" rel="noopener" target="_blank">Facebook</a>.</p>
     </div>
   </section>
 
@@ -909,10 +1032,15 @@ section{padding-block:clamp(56px,10vw,104px)}
           <li><a href="sms:1300752846?&amp;body=Hi%20Platinum%20Plumbing%2C%20I%20need%20a%20plumber%3A%20">Text us your emergency</a></li>
           <li><a href="#quote">Request a quote</a></li>
           <li>
-            <!-- TODO: replace with the real Facebook page URL -->
-            <a class="social" href="https://www.facebook.com/" rel="noopener" target="_blank">
+            <a class="social" href="https://www.facebook.com/p/Platinum-Plumbing-Gas-Solutions-100063718951102/" rel="noopener" target="_blank">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.5 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
               Facebook
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://www.instagram.com/platinumplumbingandgas/" rel="noopener" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
+              Instagram
             </a>
           </li>
         </ul>
@@ -925,7 +1053,7 @@ section{padding-block:clamp(56px,10vw,104px)}
           <li>ABN: 00 000 000 000 <em>(placeholder)</em></li>
           <li>Licence No: PGE 000000 <em>(placeholder)</em></li>
           <li>Owner: Natt Barber</li>
-          <li>Adelaide, South Australia</li>
+          <li>Edwardstown, South Australia</li>
         </ul>
       </div>
     </div>
