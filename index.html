@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>24/7 Emergency Plumber Adelaide | Platinum Plumbing &amp; Gas</title>
 <meta name="description" content="Emergency plumber Adelaide, 24/7. Burst pipes, gas leaks &amp; blocked drains sorted fast. Licensed, insured, 13+ years. Call 1300 PLATINUM.">
-<meta name="theme-color" content="#1a1d21">
+<meta name="theme-color" content="#1a1d24">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://platinumplumbingandgas.com/">
 
@@ -88,37 +88,58 @@
 
 <style>
 /* ============================================================
-   BRAND COLOURS — the only block you need to touch to re-skin
-   the whole site. Every other rule derives from these six.
-   Drop the hex codes from the Platinum logo / existing site in
-   here and the entire page follows.
+   BRAND COLOURS — sampled from the real Platinum livery:
+   the ute signage, the depot sign and the crew uniforms.
+
+   Brand blue was measured at hue 213-217 degrees across every
+   source. #1269d2 is a direct read off the "1300 PLATINUM"
+   panel on the ute tray, in full sun. The shaded depot sign
+   reads darker (#1a396a) but at the identical hue, so this is
+   the same ink under different light.
+
+   Contrast, checked not assumed:
+     white on  #1269d2 = 5.28:1  (WCAG AA body text)
+     #1269d2 on page bg = 3.19:1 (AA non-text UI component)
+     body text on page  = 10.2:1
+     headings on page   = 14.5:1
    ============================================================ */
 :root{
-  /* Darkest surface: page background, footer */
-  --brand-dark:#1a1d21;
-  /* Metallic mid-tone: body text, icons, rules, logo mark */
-  --brand-metal:#c8ccd0;
+  /* Page background. Charcoal pulled slightly blue to echo the
+     navy crew hoodies (sampled #21222d / #14161f). */
+  --brand-dark:#1a1d24;
+  /* Metallic mid-tone: body text, icons, rules. The silver in
+     the logo's droplet, cooled to sit on the dark background. */
+  --brand-metal:#c3cad4;
   /* Brightest tone: headings, emphasis */
-  --brand-light:#eef0f2;
-  /* Action colour: CTAs only — buttons, call bar, tel/sms links */
-  --brand-action:#ff6b1a;
-  /* Pressed/hover state of the action colour (~12% darker) */
-  --brand-action-dark:#e85a0c;
-  /* "We're open" status indicator */
+  --brand-light:#eaeef4;
+  /* Brand blue. CTAs only — buttons, call bar, tel/sms links. */
+  --brand-action:#1269d2;
+  /* Hover/active. Brighter, not darker: on a dark UI, lifting
+     reads as "pressable" where darkening reads as "disabled". */
+  --brand-action-hover:#1571e0;
+  /* Same hue, lifted, for accent text ON the dark background.
+     The solid brand blue is only 2.95:1 against a card — it is
+     fine as a button fill under white text, but as small link
+     text it fails WCAG AA. This tint reads 5.4:1 on a card. */
+  --brand-action-text:#4d9bf5;
+  /* "We're open" status indicator. Deliberately not brand blue —
+     green is the near-universal convention for live/available,
+     and keeping it distinct stops it competing with the CTAs. */
   --brand-status:#39d353;
 }
 
 /* ---------- Derived tokens (leave these alone) ---------- */
 :root{
   --charcoal:var(--brand-dark);
-  --charcoal-2:#212529;
-  --charcoal-3:#282d33;
-  --line:#343a41;
+  --charcoal-2:#20242c;
+  --charcoal-3:#272c35;
+  --line:#333944;
   --platinum:var(--brand-metal);
   --platinum-bright:var(--brand-light);
-  --muted:#8e959c;
-  --orange:var(--brand-action);
-  --orange-dark:var(--brand-action-dark);
+  --muted:#98a1ae;
+  --accent:var(--brand-action);
+  --accent-hover:var(--brand-action-hover);
+  --accent-text:var(--brand-action-text);
   --green:var(--brand-status);
   --radius:4px;
   --wrap:1180px;
@@ -154,7 +175,7 @@ h1{font-size:clamp(2.25rem,8.5vw,4.25rem);color:var(--platinum-bright)}
 h2{font-size:clamp(1.75rem,5.6vw,2.75rem);color:var(--platinum-bright)}
 h3{font-size:clamp(1.125rem,3.6vw,1.3rem);color:var(--platinum-bright);letter-spacing:.02em}
 p{font-size:1rem}
-a{color:var(--orange);text-decoration:none}
+a{color:var(--accent-text);text-decoration:none}
 a:hover{text-decoration:underline}
 
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
@@ -167,17 +188,16 @@ section{padding-block:clamp(56px,10vw,104px)}
 .lede{color:var(--muted);max-width:62ch;margin-top:16px;font-size:1.0625rem}
 
 /* ---------- Focus ---------- */
-/* Orange is reserved for calls-to-action: the hero buttons, the sticky call
-   bar, the per-card "Call now" links, the header phone link and inline
+/* Brand blue is reserved for calls-to-action: the hero buttons, the sticky
+   call bar, the per-card "Call now" links, the header phone link and inline
    tel/sms links. The only exceptions are focus states — the focus ring, the
-   skip link and the quote-form field focus — where orange gives keyboard
-   users the strongest contrast available on charcoal. Nothing decorative
-   uses it. */
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:2px}
+   skip link and the quote-form field focus — which are interaction states on
+   the path to a conversion. Nothing decorative uses it. */
+:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px;border-radius:2px}
 
 .skip{
   position:absolute;left:12px;top:-100px;z-index:200;
-  background:var(--orange);color:#111;font-weight:700;
+  background:var(--accent);color:#fff;font-weight:700;
   padding:12px 18px;border-radius:var(--radius);transition:top .15s ease;
 }
 .skip:focus{top:12px;text-decoration:none}
@@ -192,9 +212,9 @@ section{padding-block:clamp(56px,10vw,104px)}
 }
 .btn:hover{text-decoration:none;transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-/* Safety orange is reserved for calls-to-action only. */
-.btn-primary{background:var(--orange);color:#14171a;border-color:var(--orange);box-shadow:0 8px 28px rgba(255,107,26,.24)}
-.btn-primary:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+/* Brand blue is reserved for calls-to-action only. */
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 8px 28px rgba(18,105,210,.34)}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--platinum-bright);border-color:#4a5158}
 .btn-ghost:hover{border-color:var(--platinum);background:rgba(200,204,208,.06)}
 .btn svg{flex:none}
@@ -207,10 +227,12 @@ section{padding-block:clamp(56px,10vw,104px)}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--platinum-bright)}
 .brand:hover{text-decoration:none}
+/* Placeholder mark: a blue droplet standing in for the real Platinum
+   logo. The logo is the one place brand blue appears outside a CTA —
+   it is the identity, not decoration. */
 .brand-mark{
-  width:38px;height:38px;flex:none;border-radius:3px;
-  background:linear-gradient(140deg,#dfe3e6,#9aa1a8 55%,#6d757c);
-  display:grid;place-items:center;color:#1a1d21;font-family:var(--head);font-size:1.15rem;font-weight:700;
+  width:38px;height:38px;flex:none;
+  display:grid;place-items:center;color:var(--accent);
 }
 .brand-name{font-family:var(--head);font-size:1.0625rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.15}
 .brand-sub{display:block;font-family:var(--body);font-size:.6875rem;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
@@ -225,7 +247,7 @@ section{padding-block:clamp(56px,10vw,104px)}
   display:flex;align-items:center;position:relative;overflow:hidden;
   padding-block:clamp(40px,7vh,88px);
   background:
-    radial-gradient(1000px 520px at 78% -8%,rgba(255,107,26,.13),transparent 62%),
+    radial-gradient(1000px 520px at 78% -8%,rgba(18,105,210,.17),transparent 62%),
     radial-gradient(760px 420px at 6% 104%,rgba(200,204,208,.07),transparent 66%),
     var(--charcoal);
 }
@@ -235,12 +257,12 @@ section{padding-block:clamp(56px,10vw,104px)}
 
    .hero{
      background:
-       linear-gradient(rgba(26,29,33,.9),rgba(26,29,33,.96)),
+       linear-gradient(rgba(26,29,36,.88),rgba(26,29,36,.96)),
        url("images/hero.jpg") center/cover no-repeat,
        var(--charcoal);
    }
 
-   Keep the dark gradient on top — the white headline and the orange CTA
+   Keep the dark gradient on top — the white headline and the blue CTA
    both need it to stay readable over a photo. Export at quality ~70 and
    keep it under ~250KB. Photos do not count towards the 200KB page budget,
    but they do affect how fast the hero paints on mobile data. */
@@ -317,7 +339,7 @@ section{padding-block:clamp(56px,10vw,104px)}
 .card-call{
   margin-top:18px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
   font-family:var(--head);font-size:.875rem;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--orange);font-weight:600;padding:8px 0;min-height:44px;
+  color:var(--accent-text);font-weight:600;padding:8px 0;min-height:44px;
 }
 .card-call svg{transition:transform .2s ease}
 .card-call:hover{text-decoration:none}
@@ -363,7 +385,7 @@ section{padding-block:clamp(56px,10vw,104px)}
 }
 .shot:hover img{transform:scale(1.04)}
 .shots-note{margin-top:18px;font-size:.8125rem;color:var(--muted)}
-/* Social links are not calls-to-action, so they stay off the orange. */
+/* Social links are not calls-to-action, so they stay off the brand blue. */
 .shots-note a{color:var(--platinum-bright);text-decoration:underline;text-underline-offset:3px}
 .shots-note a:hover{color:#fff}
 
@@ -415,7 +437,7 @@ section{padding-block:clamp(56px,10vw,104px)}
 }
 .field textarea{min-height:130px;resize:vertical;line-height:1.55}
 .field input::placeholder,.field textarea::placeholder{color:#6c737a}
-.field input:focus,.field textarea:focus{border-color:var(--orange);background:var(--charcoal-3);outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--accent-text);background:var(--charcoal-3);outline:none}
 .field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#ff5252}
 .err{display:none;margin-top:8px;font-size:.8125rem;color:#ff7b7b;font-weight:500}
 .err.show{display:block}
@@ -466,8 +488,8 @@ section{padding-block:clamp(56px,10vw,104px)}
   font-family:var(--head);font-size:1.0625rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
 }
 .callbar a:hover{text-decoration:none}
-.cb-call{background:var(--orange);color:#14171a;box-shadow:0 4px 18px rgba(255,107,26,.3)}
-.cb-call:active{background:var(--orange-dark)}
+.cb-call{background:var(--accent);color:#fff;box-shadow:0 4px 18px rgba(18,105,210,.42)}
+.cb-call:active{background:var(--accent-hover)}
 .cb-text{background:transparent;color:var(--platinum-bright);border:2px solid #4a5158}
 .cb-text:active{background:rgba(200,204,208,.08)}
 
@@ -487,7 +509,7 @@ section{padding-block:clamp(56px,10vw,104px)}
   .head-call{
     display:inline-flex;align-items:center;gap:9px;
     font-family:var(--head);font-size:1.0625rem;letter-spacing:.05em;text-transform:uppercase;
-    color:var(--orange);font-weight:600;
+    color:var(--accent-text);font-weight:600;
   }
   .hero-cta{flex-direction:row;max-width:none}
   .hero-sub{font-size:1.25rem;max-width:44ch}
@@ -566,10 +588,13 @@ section{padding-block:clamp(56px,10vw,104px)}
 <header class="site-head">
   <div class="wrap head-in">
     <a class="brand" href="#top" aria-label="Platinum Plumbing and Gas Solutions — home">
-      <!-- To use the real logo instead of the "P" mark, save it as
-           images/logo.svg (or .png at 2x) and swap this span for:
+      <!-- PLACEHOLDER MARK — this is a generic droplet, not the real
+           Platinum logo. Save the actual logo as images/logo.svg and swap
+           this whole span for:
            <img class="brand-mark" src="images/logo.svg" alt="" width="38" height="38"> -->
-      <span class="brand-mark" aria-hidden="true">P</span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c0 0 7.2 8.1 7.2 12.3a7.2 7.2 0 0 1-14.4 0C4.8 10.3 12 2.2 12 2.2Z"/></svg>
+      </span>
       <span class="brand-name">Platinum Plumbing
         <span class="brand-sub">&amp; Gas Solutions</span>
       </span>
